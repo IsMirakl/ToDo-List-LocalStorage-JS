@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="todo-container">
+        <h1>ToDo List</h1>
+        <label class="label__task" for="taskInput">Задача:</label>
+        <input type="text" id="taskInput" placeholder="Введите задачу..." required>
+        <label for="descriptionInput">Описание:</label>
+        <input type="text" id="descriptionInput" placeholder="Введите описание..." required>
+        <button class="button__add" onclick="addTaskAndDescription();">Добавить</button>
+        <div id="tasksContainer">
+            <ul id="taskList"></ul>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
