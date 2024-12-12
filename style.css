@@ -4,39 +4,52 @@
     font-family: Arial, sans-serif;
 }
 
-/* Контейнер todo */
-.todo-container {
-    max-width: 600px;
-    margin: 30px auto;
-    padding: 40px;
-    background-color: #94B1A4;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+body {
+    background-color: #151719;
+    margin: 0;
+    height: 100vh;
     display: flex;
-    flex-direction: column;
-    gap: 20px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 20px; /* Отступ слева */
 }
 
-/* Заголовок */
+.todo-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.form-container {
+    flex-basis: 400px;
+    padding-right: 20px;
+}
+
+#tasksContainer {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    max-height: 100vh;
+}
+
 .todo-container h1 {
-    text-align: center;
-    color: #333;
-    margin-top: 0;
+    color: white;
     font-weight: bold;
-    font-size: 32px;
+    font-size: 40px;
 }
 
 .label__task,
 label {
     display: block;
     margin-bottom: 5px;
-    color: #333;
+    color: purple;
     font-size: 17px;
     font-weight: bold;
 }
 
 input[type="text"] {
-    width: 100%;
+    width: 350px;
     padding: 10px;
     background: none;
     outline: none;
@@ -46,6 +59,10 @@ input[type="text"] {
     font-size: 18px;
     transition: border-color 0.3s ease;
 }
+
+input::placeholder {
+    opacity: 0.3;
+  }
 
 input[type="text"]::placeholder {
     color: white;
@@ -57,6 +74,7 @@ input[type="text"]:focus {
 
 .button__add{
     padding: 10px 20px;
+    margin-top: 20px;
     background-color: #007bff;
     color: white;
     border: none;
@@ -70,13 +88,8 @@ input[type="text"]:focus {
     background-color: #0056b3;
 }
 
-.task-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
 .task-item {
+    width: 500px;
     position: relative;
     padding: 12px 24px;
     margin-bottom: 10px;
@@ -87,7 +100,7 @@ input[type="text"]:focus {
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 10px purple;
 }
 
 .task-item span {

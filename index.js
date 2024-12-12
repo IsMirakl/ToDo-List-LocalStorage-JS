@@ -1,17 +1,16 @@
 window.onload = loadTasksFromLocalStorage;
 
 function loadTasksFromLocalStorage() {
-  const tasksHTML = localStorage.getItem("tasks"); // Получаем данные из localStorage
+  const tasksHTML = localStorage.getItem("tasks");
   if (tasksHTML) {
-    document.getElementById("taskList").innerHTML = tasksHTML; // Вставляем данные в список задач
-    // Добавить возможность скачивать список дел
-    reassignDeleteButtons(); // Обработчик удаления для всех кнопок
+    document.getElementById("taskList").innerHTML = tasksHTML;
+    reassignDeleteButtons();
   }
 }
 
 function saveTasksToLocalStorage() {
   const taskList = document.getElementById("taskList");
-  localStorage.setItem("tasks", taskList.innerHTML); // Сохраняем текущий HTML-код списка задач
+  localStorage.setItem("tasks", taskList.innerHTML);
 }
 
 function addTask() {
@@ -25,7 +24,7 @@ function addTask() {
   newTask.textContent = taskValue;
 
   const taskList = document.getElementById("taskList");
-  taskList.appendChild(newTask);
+  taskList.prepend(newTask);
 
   taskInput.value = "";
 
@@ -66,11 +65,11 @@ function addDeleteButton(taskItem) {
 }
 
 function reassignDeleteButtons() {
-  const deleteButtons = document.querySelectorAll(".delete-button"); // Находим кнопки удаления
+  const deleteButtons = document.querySelectorAll(".delete-button");
   deleteButtons.forEach((button) => {
     button.addEventListener("click", function () {
-      this.parentNode.remove(); // Удаляем родительский элемент (задачу)
-      saveTasksToLocalStorage(); // Сохраняем измения
+      this.parentNode.remove();
+      saveTasksToLocalStorage();
     });
   });
 }
